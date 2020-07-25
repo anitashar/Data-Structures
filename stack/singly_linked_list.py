@@ -23,6 +23,16 @@ class LinkedList:
         # reference to the tail of the list
         self.tail = None
 
+    def add_to_head(self, value):
+        #create a node from input
+        new_node = Node(value, None)
+        if not self.head and not self.tail:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.set_next(self.head)
+            self.head = new_node
+
     def add_to_tail(self, value):
         # wrap the input value in a node
         new_node = Node(value, None)
